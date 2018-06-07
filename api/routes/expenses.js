@@ -15,9 +15,7 @@ const expenses = [{
 }];
 
 router.get('/', (req, res, next) => {
-    res.status(200).json({
-        message: 'Handling GET requests'
-    });
+    res.status(200).json(expenses);
 });
 
 router.get('/:id', (req, res, next) => {
@@ -51,9 +49,21 @@ router.put('/:id', (req, res, next) => {
             break;
         }
     }
-	
     res.status(200).json(expenses);
+});
+
+router.delete('/:id', (req, res, next) => {
+	let id = req.params['id'];
+	console.log("deleting "+id);
 	
+	for (let i = 0; i < expenses.length; i++) {
+        if (expenses[i]['id'] == id) {
+			console.log("Deleting"+i);
+            expenses.splice(i,1);
+            return res.status(200).json(expenses);
+        }
+    }
+    return res.status(200).json({});
 });
 
 module.exports = router;
