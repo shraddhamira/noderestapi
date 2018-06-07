@@ -20,12 +20,6 @@ router.get('/', (req, res, next) => {
     });
 });
 
-/*router.post('/', (req, res, next) => {
-    res.status(200).json({
-        message: 'Handling POST requests'
-    });
-});*/
-
 router.get('/:id', (req, res, next) => {
     let expenseData = {};
     let id = req.params['id'];
@@ -39,13 +33,27 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-    let expenseData = {};
-    console.log(req.body);
-    var keys = Object.keys(req.params);
-    console.log(keys);
-    for(i=0;i<keys.length;i++)
-    console.log("here"+ req.params[keys[i]]);
-    res.status(200).json({message : 'received'});
+	let expenseData = req.body;
+	let size = expenses.length;
+	expenseData['id'] = size + 1;
+	expenses.push(expenseData);
+    res.status(200).json(expenses);
+	
+});
+
+router.put('/:id', (req, res, next) => {
+	let expenseData = req.body;
+	let id = expenseData['id'];
+	
+	for (let i = 0; i < expenses.length; i++) {
+        if (expenses[i]['id'] == id) {
+            expenses[i]=expenseData;
+            break;
+        }
+    }
+	
+    res.status(200).json(expenses);
+	
 });
 
 module.exports = router;
