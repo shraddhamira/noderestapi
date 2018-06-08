@@ -32,6 +32,7 @@
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
+/data/expenses.json
 testem.log
 /typings
 

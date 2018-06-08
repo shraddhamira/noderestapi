@@ -1,0 +1,16 @@
+[
+    { "id": 1, "categoryId": 1, "description": "Grocery" },
+    { "id": 2, "categoryId": 1, "description": "Eatout" },
+    { "id": 3, "categoryId": 1, "description": "Repair" },
+    { "id": 4, "categoryId": 2, "description": "Movie" },
+    { "id": 5, "categoryId": 2, "description": "Books" },
+    { "id": 6, "categoryId": 2, "description": "Internet" },
+    { "id": 7, "categoryId": 2, "description": "TV" },
+    { "id": 8, "categoryId": 3, "description": "Mutual Funds" },
+    { "id": 9, "categoryId": 3, "description": "Health Insurance" },
+    { "id": 10, "categoryId": 3, "description": "RD" },
+    { "id": 11, "categoryId": 3, "description": "PPF" },
+    { "id": 12, "categoryId": 3, "description": "Vehicle Insurance" },
+    { "id": 13, "categoryId": 3, "description": "FD" },
+    { "id": 14, "categoryId": 1, "description": "Commute" }
+]
